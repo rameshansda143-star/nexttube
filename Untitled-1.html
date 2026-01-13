@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BharatPlay</title>
+
+  <style>
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background:#f2f2f2;
+    }
+
+    /* HEADER */
+    header{
+      background:#ff9933;
+      color:white;
+      text-align:center;
+      padding:15px;
+      font-size:24px;
+      font-weight:bold;
+    }
+
+    /* TAGLINE */
+    .tagline{
+      background:white;
+      text-align:center;
+      padding:10px;
+      font-size:16px;
+      color:#333;
+    }
+
+    /* SEARCH */
+    .search-box{
+      text-align:center;
+      padding:15px;
+      background:white;
+    }
+
+    .search-box input{
+      width:80%;
+      max-width:400px;
+      padding:10px;
+      border-radius:20px;
+      border:1px solid #ccc;
+      font-size:15px;
+      outline:none;
+    }
+
+    /* FEED */
+    .feed{
+      padding:15px;
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap:15px;
+    }
+
+    .card{
+      background:white;
+      border-radius:8px;
+      padding:10px;
+      box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    video{
+      width:100%;
+      border-radius:6px;
+      background:black;
+    }
+
+    .title{
+      margin-top:8px;
+      font-size:14px;
+      font-weight:bold;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#138808;
+      color:white;
+      text-align:center;
+      padding:10px;
+      font-size:13px;
+      margin-top:20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  🇮🇳 BharatPlay
+</header>
+
+<div class="tagline">
+  Apni Videos, Apni Awaz
+</div>
+
+<div class="search-box">
+  <input type="text" id="searchInput"
+         placeholder="Search videos on BharatPlay..."
+         onkeyup="searchVideos()">
+</div>
+
+<div class="feed">
+
+  <div class="card video-card">
+    <video controls></video>
+    <div class="title">Funny Village Short</div>
+  </div>
+
+  <div class="card video-card">
+    <video controls></video>
+    <div class="title">Motivational Bangla Video</div>
+  </div>
+
+  <div class="card video-card">
+    <video controls></video>
+    <div class="title">Local Talent Dance</div>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 BharatPlay | Made in India
+</footer>
+
+<script>
+  function searchVideos(){
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let cards = document.getElementsByClassName("video-card");
+
+    for(let i=0;i<cards.length;i++){
+      let text = cards[i].innerText.toLowerCase();
+      if(text.includes(input)){
+        cards[i].style.display="block";
+      }else{
+        cards[i].style.display="none";
+      }
+    }
+  }
+</script>
+
+</body>
+</html>
